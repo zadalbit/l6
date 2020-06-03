@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\src\Classes\ClassesController;
 
+use App\Http\Controllers\src\Libraries\LibrariesController;
+use App\Http\Controllers\src\Projects\ProjectsController;
+
 class Classes extends ClassesController
 {
     /**
@@ -20,7 +23,7 @@ class Classes extends ClassesController
 
     public function create() 
     {
-        //
+        return response()->success($this->getCreateData());
     }
 
     public function store(Request $request)
@@ -28,7 +31,7 @@ class Classes extends ClassesController
         $entity = $this->save($request->all());
 
         return response()->success([
-            'entities' => $entity
+            'entity' => $entity
         ]);
     }
 
@@ -38,7 +41,7 @@ class Classes extends ClassesController
         $entities = $this->GETToORM($request->all())->get();
 
         return response()->success([
-            'entity' => $entities
+            'entities' => $entities
         ]);
     }
 }

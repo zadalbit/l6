@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\src\Libraries;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ControllerInterface;
 
 use App\Http\Controllers\src\Libraries\LibraryModel;
 

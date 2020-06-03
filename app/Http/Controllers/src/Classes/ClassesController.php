@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\src\Classes;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ControllerInterface;
 
 use App\Http\Controllers\src\Classes\ClassModel;
 
 use App\Http\Controllers\src\Libraries\LibrariesController;
 use App\Http\Controllers\src\Projects\ProjectsController;
+
+use App;
 
 class ClassesController extends Controller implements ControllerInterface
 {
@@ -45,12 +48,12 @@ class ClassesController extends Controller implements ControllerInterface
 
     public function getCreateData() 
     {
-        $this->setProjectsController();
-        $this->setLibrariesController();
+        App::call( [ $this, 'setProjectsController' ] );
+        App::call( [ $this, 'setLibrariesController' ] );
 
         return [
             $this->projects_controller->collection_array_name => $this->projects_controller->getAll(),
             $this->libraries_controller->collection_array_name => $this->libraries_controller->getAll(),
-        ]
+        ];
     }
 }
