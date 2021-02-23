@@ -1,5 +1,5 @@
 ## Про код
-Немастурбаційний (як на мене)
+Немастурбаційний (як на мене з насадками - не то)
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
